@@ -1,29 +1,20 @@
-
-package proyectofinal;
-
+package programacion;
 
 public class Reclamacion {
-
-    private int idReclamacion;
-    private String descripcion;
+    private String descripcionDeReclamo;
     private String estado;
 
-    public Reclamacion(int idReclamacion, String descripcion, String estado) {
-        this.idReclamacion = idReclamacion;
-        this.descripcion = descripcion;
+    public Reclamacion(String descripcionDeReclamo, String estado) {
+        this.descripcionDeReclamo = descripcionDeReclamo;
         this.estado = estado;
     }
 
-    public void cambiarEstado(){
-        
+    public String getDescripcionDeReclamo() {
+        return descripcionDeReclamo;
     }
 
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setDescripcionDeReclamo(String descripcionDeReclamo) {
+        this.descripcionDeReclamo = descripcionDeReclamo;
     }
 
     public String getEstado() {
@@ -33,6 +24,8 @@ public class Reclamacion {
     public void setEstado(String estado) {
         this.estado = estado;
     }
-    
-    
+
+    public void cambiarEstado(String estado) {
+        // Implementar lógica para cambiar estado
+    }
 }

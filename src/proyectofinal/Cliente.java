@@ -1,74 +1,31 @@
-package proyectofinal;
-
-import java.util.ArrayList;
-import java.util.Scanner;
+package programacion;
+import java.util.List;
 
 public class Cliente extends Persona {
+    private List<Pedido> historialPedidos;
+    private List<Reclamacion> reclamos;
 
-    private ArrayList<Pedido> historialPedidos;
-
-    public Cliente(ArrayList<Pedido> historialPedidos, String Nombre, String Apellido, String email, int edad, int DocumentoDeIdentidad, String Direccion, int NumeroTelefonico) {
-        super(Nombre, Apellido, email, edad, DocumentoDeIdentidad, Direccion, NumeroTelefonico);
+    // Constructor
+    public Cliente(String nombre, String apellido, String email, int edad, int documentoDeIdentidad, String direccion, int numeroTelefonico, List<Pedido> historialPedidos, List<Reclamacion> reclamos) {
+        super(nombre, apellido, email, edad, documentoDeIdentidad, direccion, numeroTelefonico);
         this.historialPedidos = historialPedidos;
+        this.reclamos = reclamos;
     }
 
-    public void mostrarRepartidoresDisponibles(ArrayList<Repartidor> repartidores) {
-        System.out.println("Repartidores disponibles:");
-        for (Repartidor repartidor : repartidores) {
-            System.out.println("Nombre: " + repartidor.getNombre() + ", DNI: " + repartidor.getDocumentoDeIdentidad());
-        }
+    // Métodos para obtener el historial de pedidos y reclamos
+    public List<Pedido> getHistorialPedidos() {
+        return historialPedidos;
     }
 
-    public void seleccionarRepartidor(ArrayList<Repartidor> repartidores) {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Ingrese la posición del repartidor que desea seleccionar:");
-        int posicionSeleccionar = scanner.nextInt();
-
-        if (posicionSeleccionar >= 0 && posicionSeleccionar < repartidores.size()) {
-            Repartidor repartidorSeleccionado = repartidores.get(posicionSeleccionar);
-
-            System.out.println("Datos actuales del repartidor seleccionado:");
-            System.out.println("Nombre: " + repartidorSeleccionado.getNombre());
-            System.out.println("DNI: " + repartidorSeleccionado.getDocumentoDeIdentidad());
-        }
+    public List<Reclamacion> getReclamos() {
+        return reclamos;
     }
-
-    public void reportarRepartidor(ArrayList<Repartidor> repartidores) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Por favor, escriba su comentario sobre la experiencia con el repartidor:");
-        String comentario = scanner.nextLine();
-
-        System.out.println("Se ha reportado la experiencia con el repartidor. ");
-        System.out.println("Descripcion: " + comentario);
+    
+    public void addPedido(Pedido pedido) {
+        historialPedidos.add(pedido);
     }
-
-    public void gestionarIncidente() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Por favor, describa el incidente o problema:");
-        String comentario = scanner.nextLine();
-        System.out.println("El incidente ha sido registrado: " + comentario);
-    }
-
-    public void CalificarRepartidor(ArrayList<Repartidor> repartidores) {
-        Scanner scanner = new Scanner(System.in);
-
-        int calificacion;
-
-        do {
-            System.out.println("Ingrese el número de estrellas que merece el repartidor (1-5):");
-            calificacion = scanner.nextInt();
-
-            if (calificacion >= 1 && calificacion <= 5) {
-                System.out.print("Calificación del repartidor: ");
-                for (int i = 0; i < calificacion; i++) {
-                    System.out.print("*");
-                }
-                System.out.println();
-            } else {
-                System.out.println("La calificación debe estar en el rango de 1 a 5. Inténtelo nuevamente.");
-            }
-        } while (calificacion < 1 || calificacion > 5);
+    
+    public void addReclamo(Reclamacion reclamo) {
+        reclamos.add(reclamo);
     }
 }
-

@@ -1,80 +1,79 @@
-
-package proyectofinal;
-
-
+package programacion;
 public class Persona {
-    private String Nombre;
-    private String Apellido;
+    private String nombre;
+    private String apellido;
     private String email;
     private int edad;
-    private int DocumentoDeIdentidad;
-    private String Direccion;
-    private int NumeroTelefonico;
+    private int documentoDeIdentidad;
+    private String direccion;
+    private int numeroTelefonico;
 
-    public Persona(String Nombre, String Apellido, String email, int edad, int DocumentoDeIdentidad, String Direccion, int NumeroTelefonico) {
-        this.Nombre = Nombre;
-        this.Apellido = Apellido;
+    // Constructor
+    public Persona(String nombre, String apellido, String email, int edad, int documentoDeIdentidad, String direccion, int numeroTelefonico) {
+        this.nombre = nombre;
+        this.apellido = apellido;
         this.email = email;
         this.edad = edad;
-        this.DocumentoDeIdentidad = DocumentoDeIdentidad;
-        this.Direccion = Direccion;
-        this.NumeroTelefonico = NumeroTelefonico;
+        this.documentoDeIdentidad = documentoDeIdentidad;
+        this.direccion = direccion;
+        this.numeroTelefonico = numeroTelefonico;
     }
 
+    // Getters
     public String getNombre() {
-        return Nombre;
-    }
-
-    public void setNombre(String Nombre) {
-        this.Nombre = Nombre;
+        return nombre;
     }
 
     public String getApellido() {
-        return Apellido;
-    }
-
-    public void setApellido(String Apellido) {
-        this.Apellido = Apellido;
+        return apellido;
     }
 
     public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public int getEdad() {
         return edad;
+    }
+
+    public int getDocumentoDeIdentidad() {
+        return documentoDeIdentidad;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public int getNumeroTelefonico() {
+        return numeroTelefonico;
+    }
+
+    // Setters
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public void setEdad(int edad) {
         this.edad = edad;
     }
 
-    public int getDocumentoDeIdentidad() {
-        return DocumentoDeIdentidad;
+    public void setDocumentoDeIdentidad(int documentoDeIdentidad) {
+        this.documentoDeIdentidad = documentoDeIdentidad;
     }
 
-    public void setDocumentoDeIdentidad(int DocumentoDeIdentidad) {
-        this.DocumentoDeIdentidad = DocumentoDeIdentidad;
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
-    public String getDireccion() {
-        return Direccion;
+    public void setNumeroTelefonico(int numeroTelefonico) {
+        this.numeroTelefonico = numeroTelefonico;
     }
-
-    public void setDireccion(String Direccion) {
-        this.Direccion = Direccion;
-    }
-
-    public int getNumeroTelefonico() {
-        return NumeroTelefonico;
-    }
-
-    public void setNumeroTelefonico(int NumeroTelefonico) {
-        this.NumeroTelefonico = NumeroTelefonico;
-    }
-    
 }
