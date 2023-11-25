@@ -1,9 +1,7 @@
 package programacion;
-
 import java.util.ArrayList;
 
 public class Repartidor extends Persona {
-
     private String numeroDeVehiculo;
     private ArrayList<Pedido> historialEntregas;
     private int idRepartidor;
@@ -11,7 +9,7 @@ public class Repartidor extends Persona {
     private int reportes;
 
     public Repartidor(String nombre, int documentoDeIdentidad, int estrellas, int reportes,
-            String numeroDeVehiculo, ArrayList<Pedido> historialEntregas, int idRepartidor) {
+                      String numeroDeVehiculo, ArrayList<Pedido> historialEntregas, int idRepartidor) {
         super(nombre, "", "", 0, documentoDeIdentidad, "", 0);
         this.numeroDeVehiculo = numeroDeVehiculo;
         this.historialEntregas = historialEntregas;
@@ -56,11 +54,17 @@ public class Repartidor extends Persona {
         this.estrellas = (this.estrellas + calificacion) / 2;
     }
 
+    public void aumentarReporte() {
+        // Aumentar el contador de reportes
+        this.reportes++;
+    }
+
     public ArrayList<Pedido> getHistorialEntregas() {
         return historialEntregas;
     }
 
     public void entregarPedido() {
+        // Implementar lógica para entregar pedido
         if (!historialEntregas.isEmpty()) {
             Pedido pedidoActual = historialEntregas.get(0);
             pedidoActual.cambiarEstado("Entregado");
@@ -68,3 +72,4 @@ public class Repartidor extends Persona {
         }
     }
 }
+
